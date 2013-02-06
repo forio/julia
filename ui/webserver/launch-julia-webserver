@@ -2,10 +2,10 @@
 cd $(dirname $0)
 test -x ../sbin/nginx || { echo "Install nginx with \"make webrepl\" " && exit 0; }
 
-echo "Connect to http://localhost:2000/ for the web REPL."
+echo "Connect to http://julia.forio.com for the web REPL."
 ../sbin/nginx -c etc/nginx.conf &
 
-[ x$(uname) = xDarwin ] && (sleep 1 && open http://localhost:2000/) &
+[ x$(uname) = xDarwin ] && (sleep 1 && open http://localhost:80/) &
 ./julia-release-webserver -p 2001
 #gdb --args ./julia-debug-webserver -p 2001
 kill `cat ../logs/nginx.pid`
