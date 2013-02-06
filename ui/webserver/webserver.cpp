@@ -541,7 +541,7 @@ void watchdog(uv_timer_t* handle, int status)
 /////////////////////////////////////////////////////////////////////////////
 
 // the maximum number of concurrent julia_sessions
-const size_t MAX_CONCURRENT_SESSIONS = 16;
+const size_t MAX_CONCURRENT_SESSIONS = 64;
 
 // give julia this much time to respond to messages
 const int JULIA_TIMEOUT = 500; // in milliseconds
