@@ -6,7 +6,7 @@ echo "Connect to http://julia.forio.com for the web REPL."
 ../sbin/nginx -c etc/nginx.conf &
 
 [ x$(uname) = xDarwin ] && (sleep 1 && open http://localhost:80/) &
-./julia-release-webserver -p 2001
+sudo -u julia ./julia-release-webserver -p 2001 >> /var/log/julia/julia-out.txt
 #gdb --args ./julia-debug-webserver -p 2001
 kill `cat ../logs/nginx.pid`
 
